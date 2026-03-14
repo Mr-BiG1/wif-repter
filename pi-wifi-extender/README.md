@@ -22,11 +22,12 @@ Your Pi stays **Wi-Fi → Ethernet bridge** (wlan0 → eth0 → Cisco switch). T
    ```
    Change `ssid=MyHomeExtender` and `wpa_passphrase=StrongPassword123` to your values.
 
-3. **Run the setup script**:
+3. **Run the setup script** (from the folder that contains the script):
    ```bash
-   chmod +x ~/setup-alfa-extender.sh
-   sudo ~/setup-alfa-extender.sh
+   chmod +x setup-alfa-extender.sh
+   sudo bash setup-alfa-extender.sh
    ```
+   If you get "No such file or directory" when using `./setup-alfa-extender.sh`, the file has Windows line endings. Use `sudo bash setup-alfa-extender.sh` instead, or fix with: `sed -i 's/\r$//' setup-alfa-extender.sh`
 
 4. **If `hostapd.conf` was missing**, create it first:
    ```bash
